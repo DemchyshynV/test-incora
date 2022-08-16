@@ -32,7 +32,8 @@ export class StreamingService {
     }
 
     private _filterMostViewedGtTen(shows: Show[]): Show[] {
-        if (shows.length <= 10) {
+        const max = 10
+        if (shows.length <= max) {
             return shows
         }
 
@@ -40,7 +41,7 @@ export class StreamingService {
         const sortedViews = [...this.viewsByShowNames]
             .filter(value => showNames.includes(value[0]))
             .sort((a, b) => a[1] - b[1])
-            .slice(0,10)
+            .slice(0, max)
             .map(value => value[0])
 
         return shows.filter(value => sortedViews.includes(value.name))
