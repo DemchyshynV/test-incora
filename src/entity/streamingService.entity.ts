@@ -40,8 +40,9 @@ export class StreamingService {
         const sortedViews = [...this.viewsByShowNames]
             .filter(value => showNames.includes(value[0]))
             .sort((a, b) => a[1] - b[1])
+            .slice(0,10)
             .map(value => value[0])
 
-        return shows.filter(value => sortedViews.includes(value.name)).slice(0,10)
+        return shows.filter(value => sortedViews.includes(value.name))
     }
 }
