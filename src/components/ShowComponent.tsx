@@ -1,11 +1,11 @@
 import {FC, ReactChild, ReactChildren, ReactNode} from 'react';
-import {Show} from '../entity';
+import { Show } from '../entity';
 
 interface IProps {
     show: Show;
 }
 
-const StreamingServiceComponent: FC<IProps> = ({show}) => {
+const ShowComponent: FC<IProps> = ({show}) => {
     return (
         <div>
                 {show.name} -- {show.releaseDate.getFullYear()} -- {show.genre.name} -- {show.getDuration()}
@@ -13,4 +13,4 @@ const StreamingServiceComponent: FC<IProps> = ({show}) => {
     );
 };
 
-export {StreamingServiceComponent};
+export {ShowComponent};

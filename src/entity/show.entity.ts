@@ -1,15 +1,15 @@
 import {IGenre} from '../interfaces';
 
 export abstract class Show {
-    name:string;
-    genre:IGenre;
-    releaseDate:Date
 
-    constructor(name: string, genre: IGenre, releaseDate: Date) {
-        this.name = name;
-        this.genre = genre;
-        this.releaseDate = releaseDate;
+    protected constructor(public name: string, public genre: IGenre, public releaseDate: Date) {
     }
 
-    abstract getDuration():number
+    abstract getDuration(): number
+
+    compare(other: Show): boolean {
+        return this.name === other.name
+            && this.genre === other.genre
+            && this.releaseDate === other.releaseDate
+    }
 }
