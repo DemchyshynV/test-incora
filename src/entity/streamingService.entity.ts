@@ -33,6 +33,7 @@ export class StreamingService {
 
     private _filterMostViewedGtTen(shows: Show[]): Show[] {
         const max = 10
+
         if (shows.length <= max) {
             return shows
         }
